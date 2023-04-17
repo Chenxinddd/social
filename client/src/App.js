@@ -1,8 +1,11 @@
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import {createTheme} from "@mui/material/styles";
 import {useSelector} from "react-redux";
-import { BrowserRouter, Route } from "react-router-dom";
 import { themeSettings } from "theme";
+import Layout from "scences/layout";
+import Dashboard from "scences/dashboard";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { useMemo } from "react";
 
 
 function App() {
