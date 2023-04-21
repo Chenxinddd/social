@@ -117,7 +117,7 @@ const Sidebar = ({
             anchor = "left"
             sx={{
                 width: draweWidth,
-                "&. MuiDrawer-paper": {
+                "& .MuiDrawer-paper": {
                     color: theme.palette.secondary[200],
                     backgroundColor: theme.palette.background.alt,
                     boxSixing: "border-box",
@@ -132,7 +132,8 @@ const Sidebar = ({
                         <Box display="flex" alignItems="center" gap="0.5rem">
                              <Typography variant='h4' frontWeight="bold">
                                 ECOMVISION
-                             </Typography>
+                        </Typography>
+                        
                         </Box>
                         {!isNonMobile && (
                             <IconButton onClick={() => setisSidebarOpen(!isSidebarOpen)}>
