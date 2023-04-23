@@ -11,10 +11,15 @@ import { useDispatch } from 'react-redux';
 import {setMode} from "state";
 import { AppBar, useTheme, Toolbar, IconButton, InputBase } from '@mui/material';
 
-const Navbar = ({isSidebarOpen,
+const Navbar = ({user, isSidebarOpen,
     setisSidebarOpen,}) => {
   const dispatch = useDispatch();
   const theme = useTheme();
+
+  const [anchorEl, setanchorEl] = useState(null);
+  const isOpen = Boolean(anchorEl);
+  const handleClick= (event) => setanchorEl(event.currentTarget);
+  const handleClose = () => setanchorEl(null);
 
   return (
     <AppBar
@@ -53,6 +58,16 @@ const Navbar = ({isSidebarOpen,
             <IconButton>
             <SettingsOutlined sx={{ fontSize: "25px" }} />
           </IconButton>
+
+          <FlexBetween>
+            <Button onClick={handleClick} sx={{display: "flex", 
+            justifyContent: "space-between", 
+            alignItems: "center", 
+            textTransform: "none",
+            gap: "1rem",}}>
+
+            </Button>
+          </FlexBetween>
         </FlexBetween>
     </Toolbar>
 
